@@ -4,4 +4,5 @@ go 1.21.6
 
 replace github.com/bowman2001/perplex => ../
 
-require github.com/dacjames/perplex v0.20.6 // indirect
+require github.com/dacjames/perplex v0.20.7 // indirect
+

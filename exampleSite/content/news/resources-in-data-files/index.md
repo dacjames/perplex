@@ -43,7 +43,7 @@ We can also use TOML or JSON files, enter a remote URL as source, and call every
 
 ```json
 {
-    "src": "https://picsum.photos/300/300",
+    "src": "https://fastly.picsum.photos/id/251/300/300.jpg?hmac=ydZ4eDmNM-SKvShV1CV2q7QhHof0MXYCAIL-btzNpPo",
     "caption": "Random image",
     "posh": "right",
     "width": "tiny"

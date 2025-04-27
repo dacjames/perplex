@@ -105,7 +105,7 @@ References:
 {{- with try (resources.GetRemote $url) }}
     {{- with .Err }}
         {{- errorf "The %q code block render hook was unable to get the remote image. See %s. %s" $renderHookName $position . }}
-    {{- else }}
+    {{- else with .Value }}
         {{- $url = .RelPermalink }}
     {{- end }}
 {{- else }}

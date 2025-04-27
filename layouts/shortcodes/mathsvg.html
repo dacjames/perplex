@@ -105,8 +105,10 @@ References:
 {{- with try (resources.GetRemote $url) }}
     {{- with .Err }}
         {{- errorf "The %q shortcode was unable to get the remote image. See %s. %s" $name $position . }}
-    {{- else }}
+    {{- else with .Value }}
         {{- $url = .RelPermalink }}
+    {{- else }}
+        {{ errorf "Unable to get remote resource %q" $url }}
     {{- end }}
 {{- else }}
     {{- errorf "The %q shortcode was unable to get the remote image. See %s" $name $position }}
