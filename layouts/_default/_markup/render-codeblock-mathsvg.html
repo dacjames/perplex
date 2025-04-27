@@ -102,7 +102,7 @@ References:
 
 {{- /* Get image. */}}
 {{- $url := printf "%s?%s" $apiEndpoint $qs }}
-{{- with resources.GetRemote $url }}
+{{- with try (resources.GetRemote $url) }}
     {{- with .Err }}
         {{- errorf "The %q code block render hook was unable to get the remote image. See %s. %s" $renderHookName $position . }}
     {{- else }}
